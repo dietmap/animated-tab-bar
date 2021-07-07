@@ -130,6 +130,11 @@ open class RAMAnimatedTabBarController: UITabBarController {
         super.viewWillTransition(to: size, with: coordinator)
     }
     
+    open override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        layoutContainers()
+    }
+    
     // MARK: create methods
     private func initializeContainers() {
         containers.forEach { $0.removeFromSuperview() }
